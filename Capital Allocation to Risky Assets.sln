@@ -1,2 +1,4 @@
 import numpy as np
+import pandas as pd
 
+prbr = pd.read_excel(r'C:\Users\Jhona\OneDrive\Área de Trabalho\PRBR11.xlsx')
