@@ -1,4 +1,17 @@
 import numpy as np
 import pandas as pd
 
-prbr = pd.read_excel(r'C:\Users\Jhona\OneDrive\Área de Trabalho\PRBR11.xlsx')
+prbr = pd.read_excel(r'C:\Users\Jhona\OneDrive\Área de Trabalho\PRBR11.xlsx', index_col='Data')
+
+cple = prbr['CPLE6'].pct_change()
+
+#####Variaves do modelo
+a = 2
+b = 3.5
+c = 5
+E = 0.35
+std = np.std(cple)*(252**0.5)
+print(std)
+var = std**2
+ca = E-0.5*b*var
+print('Alocação ideal do patrimônio é: {:.2f}'.format(ca*100), '%')
